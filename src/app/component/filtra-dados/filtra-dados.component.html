@@ -1,0 +1,23 @@
+<div>
+ <label for="marcas" class="control-label">marca</label>
+<select class="form-control" id="marcas" formControlName="marcas" (click)='getCarrosPorMarca()'>
+<option *ngFor="let marca of marcas" [value]="marca.id">{{ marca.name }}</option>
+ </select>
+ </div>
+
+ <div>
+    <label for="carros" class="control-label">Modelo</label>
+   <select class="form-control" id="carros" formControlName="carros" (click)='getDetalhesCarro()'>
+   <option *ngFor="let carro of carros" [value]="carro.id">{{ carro.name }}</option>
+    </select>
+</div>
+   
+<div>
+    <label for="anos" class="control-label">Ano/combustivel</label>
+   <select class="form-control" id="anos" formControlName="anos" (click)="getFipe()">
+   <option *ngFor="let detalhe of detalhes" [value]="detalhe.id">{{ detalhe.name }}</option>
+    </select>
+</div>
+<ul>
+    <li *ngFor="let fip of fipe">{{fip.id}}{{fip.marca}}</li>
+</ul>
